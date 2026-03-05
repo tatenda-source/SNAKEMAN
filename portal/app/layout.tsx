@@ -4,7 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "SNAKEMAN Expert Portal",
+  title: "Chawa's WildCatcher — Expert Portal",
   description: "Expert dashboard for managing bookings, emergencies, and content.",
 };
 

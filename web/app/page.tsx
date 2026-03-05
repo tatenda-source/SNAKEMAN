@@ -130,12 +130,16 @@ function SnakeSVG() {
 }
 
 function SnakeScalePattern({ color = "green" }: { color?: string }) {
+  const fill = color === "red" ? "rgba(239,68,68,0.03)" : "rgba(34,197,94,0.025)";
+  const stroke = color === "red" ? "rgba(239,68,68,0.13)" : "rgba(34,197,94,0.11)";
+  const rib = color === "red" ? "rgba(239,68,68,0.06)" : "rgba(34,197,94,0.05)";
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='40' height='20' viewBox='0 0 40 20'><path d='M20,0 L40,10 L20,20 L0,10 Z' fill='${fill}' stroke='${stroke}' stroke-width='0.7'/><line x1='20' y1='1' x2='20' y2='19' stroke='${rib}' stroke-width='0.5'/></svg>`;
   return (
     <div
-      className="absolute inset-0 opacity-30 pointer-events-none"
+      className="absolute inset-0 pointer-events-none"
       style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='20' rx='18' ry='13' fill='none' stroke='${encodeURIComponent(color === "red" ? "#EF4444" : "#22C55E")}' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E")`,
-        backgroundSize: "40px 40px",
+        backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(svg)}")`,
+        backgroundSize: "40px 20px",
       }}
     />
   );
@@ -166,16 +170,12 @@ export default function HomePage() {
         <SnakeScalePattern />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-void" />
 
-        {/* Ambient orbs */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-venom/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-forest-400/10 rounded-full blur-[80px] pointer-events-none" />
-
         <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-20 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — text */}
           <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-green text-venom text-xs font-semibold tracking-widest uppercase mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-venom animate-pulse" />
-              Zimbabwe's Snake Intelligence Platform
+              Chawa's WildCatcher · Zimbabwe
             </div>
 
             <h1 className="font-display text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] mb-8">
@@ -282,7 +282,7 @@ export default function HomePage() {
               Everything You Need to Stay Safe
             </h2>
             <p className="text-smoke text-lg max-w-xl mx-auto">
-              From instant AI identification to emergency response — SNAKEMAN has you covered across Zimbabwe.
+              From instant AI identification to emergency response — Chawa's WildCatcher has you covered across Zimbabwe.
             </p>
           </div>
 
@@ -688,9 +688,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <span className="font-display text-xl font-bold">
-                SNAKE<span className="text-venom">MAN</span>
-              </span>
+              <div className="flex flex-col leading-none gap-px">
+                <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-smoke/50">Chawa's</span>
+                <span className="font-display text-lg font-black leading-none">
+                  <span className="text-parchment">Wild</span><span className="text-venom">Catcher</span>
+                </span>
+              </div>
               <span className="text-smoke text-sm">Zimbabwe's Snake Intelligence Platform</span>
             </div>
             <div className="flex gap-8 text-sm text-smoke/60">

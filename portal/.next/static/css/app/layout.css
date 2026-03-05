@@ -994,6 +994,9 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-\[8px\] {
+  font-size: 8px;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1012,8 +1015,14 @@ video {
 .leading-snug {
   line-height: 1.375;
 }
+.leading-none {
+  line-height: 1;
+}
 .tracking-wide {
   letter-spacing: 0.025em;
+}
+.tracking-\[0\.2em\] {
+  letter-spacing: 0.2em;
 }
 .text-accent {
   --tw-text-opacity: 1;

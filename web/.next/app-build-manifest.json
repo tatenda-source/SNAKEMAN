@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/book/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/book/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,20 +11,30 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/identify/page": [
+    "/shop/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/identify/page.js"
+      "static/chunks/app/shop/page.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/library/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/library/page.js"
     ],
-    "/book/page": [
+    "/identify/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/book/page.js"
+      "static/chunks/app/identify/page.js"
+    ],
+    "/emergency/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/emergency/page.js"
     ]
   }
 }

@@ -42,10 +42,13 @@ export default function Sidebar() {
             </svg>
           </div>
           <div>
-            <div className="font-bold text-sm tracking-wide text-text-primary">
-              SNAKE<span className="text-accent">MAN</span>
+            <div className="leading-none">
+              <div className="text-[8px] font-bold tracking-[0.2em] uppercase text-text-muted mb-0.5">Chawa's</div>
+              <div className="font-bold text-sm leading-none">
+                Wild<span className="text-accent">Catcher</span>
+              </div>
             </div>
-            <div className="text-text-muted text-[10px] tracking-wide uppercase">Expert Portal</div>
+            <div className="text-text-muted text-[10px] tracking-wide uppercase mt-0.5">Expert Portal</div>
           </div>
         </div>
       </div>

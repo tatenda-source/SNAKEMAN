@@ -4,14 +4,14 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "SNAKEMAN — Zimbabwe Snake ID & Expert Consultation",
+  title: "Chawa's WildCatcher — Zimbabwe Snake ID & Expert Consultation",
   description:
     "Instant AI-powered snake identification for Zimbabwe's 8 most common species. Book expert consultations and access emergency support.",
-  keywords: ["Zimbabwe snakes", "snake identification", "herpetology", "snake bite", "wildlife"],
+  keywords: ["Zimbabwe snakes", "snake identification", "herpetology", "snake bite", "wildlife", "Chawa's Wild Adventures"],
   openGraph: {
-    title: "SNAKEMAN",
+    title: "Chawa's WildCatcher",
     description: "Know Your Snake. Save Your Life.",
-    siteName: "SNAKEMAN",
+    siteName: "Chawa's WildCatcher",
     type: "website",
   },
 };
