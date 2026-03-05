@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { CalendarDays, CheckCircle2, ChevronRight, Star, MapPin, Loader2, ShieldAlert, Bug, Search } from "lucide-react";
+import { getExperts, getAvailableSlots, createBooking } from "@/lib/api";
+import type { Expert } from "@/lib/types";
+import toast from "react-hot-toast";
 
 const SERVICES = [
   {
@@ -29,10 +32,6 @@ const SERVICES = [
     accent: "#A78BFA",
   },
 ];
-
-import { getExperts, getAvailableSlots, createBooking } from "@/lib/api";
-import type { Expert } from "@/lib/types";
-import toast from "react-hot-toast";
 
 const TIME_SLOTS = ["08:00", "09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00"];
 
@@ -221,8 +220,6 @@ export default function BookPage() {
                   </div>
                 ))}
               </div>
-            </div>
-
             </div>
             )}
 

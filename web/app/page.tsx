@@ -14,6 +14,12 @@ import {
   Shield,
   Eye,
   ShoppingBag,
+  XCircle,
+  CheckCircle2,
+  Phone,
+  Heart,
+  GraduationCap,
+  Bug,
 } from "lucide-react";
 
 const DANGER_CONFIG = {
@@ -489,6 +495,189 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl glass-green text-venom font-semibold text-sm hover:glow-green transition-all"
             >
               Book a Consultation <ChevronRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FIRST AID QUICK REFERENCE ────────────────── */}
+      <section className="py-24 bg-void">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warning/10 border border-warning/30 text-warning text-sm font-bold tracking-widest uppercase mb-6">
+              <Heart size={14} /> First Aid Reference
+            </div>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-parchment mb-4">
+              If You're Bitten in Zimbabwe
+            </h2>
+            <p className="text-smoke max-w-xl mx-auto">
+              Know these steps before a snake is ever near you. In a crisis, seconds matter.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            {/* DO column */}
+            <div className="glass rounded-3xl p-8 border border-venom/15">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-venom/15 flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-venom" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-venom">DO</h3>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Stay calm — panic speeds venom spread through the bloodstream",
+                  "Immobilise the bitten limb at or below heart level",
+                  "Remove rings, watches, tight clothing near the bite",
+                  "Mark the bite site with a pen and note the exact time",
+                  "Get to the nearest hospital immediately — don't wait for symptoms",
+                  "Call Zimbabwe emergency services: 999 / 04-994301",
+                  "If you safely can, photograph the snake from a distance for ID",
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-smoke leading-relaxed">
+                    <span className="w-5 h-5 rounded-full bg-venom/15 text-venom flex-none flex items-center justify-center text-xs font-bold mt-0.5">{i + 1}</span>
+                    {step}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* DO NOT column */}
+            <div className="glass rounded-3xl p-8 border border-danger/15">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-danger/15 flex items-center justify-center">
+                  <XCircle size={20} className="text-danger" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-danger">DO NOT</h3>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Cut the wound or attempt to suck out venom — this does not work",
+                  "Apply a tourniquet — cuts off blood flow and causes tissue death",
+                  "Apply ice or cold water to the bite",
+                  "Give aspirin, ibuprofen or alcohol — these thin the blood",
+                  "Try to catch or kill the snake — causes more bites",
+                  "Drive yourself to hospital if you feel dizzy or weak",
+                  "Wait to see if symptoms develop before seeking medical help",
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-smoke leading-relaxed">
+                    <XCircle size={14} className="text-danger/60 flex-none mt-0.5" />
+                    {step}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Spitting cobra eye protocol */}
+          <div className="glass-red rounded-2xl p-6 border border-warning/25 max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Eye size={16} className="text-warning" />
+              <span className="text-warning font-bold text-sm uppercase tracking-wide">Spitting Cobra or Rinkhals — Venom in Eyes</span>
+            </div>
+            <p className="text-smoke text-sm leading-relaxed">
+              Flush immediately with large volumes of clean water for <strong className="text-parchment">15–20 minutes</strong>.
+              Do NOT rub. Seek hospital urgently — venom causes permanent corneal damage if untreated within hours.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SAFETY EDUCATION ─────────────────────────── */}
+      <section className="py-24 bg-forest-950 scales-bg">
+        <div className="absolute inset-0 bg-gradient-to-b from-void to-transparent pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-green text-venom text-sm font-bold tracking-widest uppercase mb-6">
+              <GraduationCap size={14} /> Safety Education
+            </div>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-parchment mb-4">
+              Know Before You Encounter
+            </h2>
+            <p className="text-smoke max-w-xl mx-auto">
+              Zimbabwe's landscapes are rich with wildlife. The more you know, the safer your family stays.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Eye,
+                title: "Snake Awareness",
+                desc: "Learn to identify the 8 species found across Zimbabwe's provinces — from Harare suburbs to the Lowveld. Understand their habitats, seasonal activity, and warning signs.",
+                topics: ["Species ID", "Regional habitats", "Seasonal patterns", "Body language"],
+                accent: "#22C55E",
+                href: "/library",
+                cta: "Explore Library",
+              },
+              {
+                icon: Heart,
+                title: "Snakebite First Aid",
+                desc: "Life-saving protocols for every venom type found in Zimbabwe — cytotoxic, neurotoxic, and haemotoxic. Critical knowledge for farmers, parents, hikers, and rural communities.",
+                topics: ["Venom types", "Immobilisation", "Hospital protocols", "Antivenom"],
+                accent: "#F59E0B",
+                href: "/library",
+                cta: "Learn First Aid",
+              },
+              {
+                icon: Bug,
+                title: "Property Safety",
+                desc: "Reduce snake encounters on your property. Understand what attracts snakes, how to secure your home, and when to call a professional for removal or assessment.",
+                topics: ["Habitat reduction", "Entry point sealing", "Removal vs. DIY", "Safe gardens"],
+                accent: "#A78BFA",
+                href: "/book",
+                cta: "Book Assessment",
+              },
+            ].map((card) => {
+              const Icon = card.icon;
+              return (
+                <div key={card.title} className="glass rounded-2xl p-7 flex flex-col group hover:border-white/15 transition-all duration-300 hover:-translate-y-1">
+                  <div
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
+                    style={{ background: `${card.accent}18`, border: `1px solid ${card.accent}30` }}
+                  >
+                    <Icon size={22} style={{ color: card.accent }} />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-parchment mb-3">{card.title}</h3>
+                  <p className="text-smoke text-sm leading-relaxed mb-5">{card.desc}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {card.topics.map((t) => (
+                      <span key={t} className="text-xs px-2.5 py-1 rounded-full bg-forest-800/60 text-smoke/70 border border-forest-700">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <Link
+                    href={card.href}
+                    className="mt-auto flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all"
+                    style={{ color: card.accent }}
+                  >
+                    {card.cta} <ChevronRight size={14} />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Zimbabwe-specific note */}
+          <div className="mt-12 glass rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6 max-w-4xl mx-auto">
+            <div className="w-12 h-12 rounded-2xl bg-venom/10 border border-venom/20 flex items-center justify-center flex-none">
+              <Phone size={20} className="text-venom" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="font-semibold text-parchment mb-1">Zimbabwe Emergency Contacts</div>
+              <div className="text-smoke text-sm">
+                Emergency Services: <span className="text-parchment font-mono">999</span> &nbsp;·&nbsp;
+                Harare Hospital: <span className="text-parchment font-mono">04-994301</span> &nbsp;·&nbsp;
+                Mpilo Hospital (Bulawayo): <span className="text-parchment font-mono">09-72111</span> &nbsp;·&nbsp;
+                Poison Control: <span className="text-parchment font-mono">04-791631</span>
+              </div>
+            </div>
+            <Link
+              href="/emergency"
+              className="flex-none flex items-center gap-2 px-5 py-2.5 rounded-xl bg-danger/10 border border-danger/30 text-danger text-sm font-bold hover:bg-danger/20 transition-all"
+            >
+              <AlertTriangle size={14} /> Emergency
             </Link>
           </div>
         </div>
