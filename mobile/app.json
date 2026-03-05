@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "SNAKEMAN",
+    "slug": "snakeman-zw",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "snakeman",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#030A05"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "zw.snakeman.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "SNAKEMAN uses your camera to photograph snakes for AI identification.",
+        "NSPhotoLibraryUsageDescription": "SNAKEMAN accesses your photo library to upload snake photos for identification.",
+        "NSLocationWhenInUseUsageDescription": "SNAKEMAN uses your location to connect you with nearby experts during emergencies."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#030A05"
+      },
+      "package": "zw.snakeman.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "VIBRATE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-camera",
+      "expo-image-picker",
+      [
+        "expo-location",
+        { "locationAlwaysAndWhenInUsePermission": "SNAKEMAN uses location for emergency response." }
+      ]
+    ],
+    "extra": {
+      "eas": { "projectId": "your-eas-project-id" }
+    }
+  }
+}
