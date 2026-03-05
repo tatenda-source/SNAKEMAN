@@ -5,12 +5,12 @@ import { CalendarDays, Clock, CheckCircle2, XCircle, AlertCircle, MoreHorizontal
 import toast from "react-hot-toast";
 
 const ALL_BOOKINGS = [
-  { id: "A3F2B1", user: "Tatenda Moyo", email: "t.moyo@gmail.com", phone: "+263771234567", date: "2026-03-06", time: "09:00", status: "CONFIRMED", reason: "Snake found in garden — need removal advice", location: "Borrowdale, Harare", snake_concern: "Puff Adder" },
-  { id: "B7D4E2", user: "Nomsa Dube", email: "n.dube@gmail.com", phone: "+263772345678", date: "2026-03-06", time: "11:00", status: "PENDING", reason: "Photo identification help", location: "Bulawayo CBD", snake_concern: "Unknown" },
-  { id: "C1A9F3", user: "James Mutizwa", email: "j.mutizwa@yahoo.com", phone: "+263773456789", date: "2026-03-07", time: "14:00", status: "PENDING", reason: "Educational consultation for school", location: "Mutare", snake_concern: null },
-  { id: "D5K2L8", user: "Rudo Chikomo", email: "r.chikomo@gmail.com", phone: "+263774567890", date: "2026-03-07", time: "09:00", status: "CONFIRMED", reason: "Post-bite follow-up — recovering from puff adder bite", location: "Gweru", snake_concern: "Puff Adder" },
-  { id: "E9M3N4", user: "Patrick Sibanda", email: "p.sibanda@gmail.com", phone: "+263775678901", date: "2026-03-08", time: "10:00", status: "CANCELLED", reason: "Property inspection before purchase", location: "Masvingo", snake_concern: null },
-  { id: "F2P6Q7", user: "Grace Mudyanadzo", email: "grace.m@hotmail.com", phone: "+263776789012", date: "2026-03-09", time: "11:00", status: "COMPLETED", reason: "Identification of shed snake skin", location: "Harare North", snake_concern: "Boomslang" },
+  { id: "A3F2B1", user: "Tatenda Moyo", email: "t.moyo@gmail.com", phone: "+263771234567", date: "2026-03-06", time: "09:00", status: "CONFIRMED", service: "Snake Catch & Removal", reason: "Live puff adder found under garden furniture — needs removal before children come home", location: "Borrowdale, Harare", snake_concern: "Puff Adder" },
+  { id: "B7D4E2", user: "Nomsa Dube", email: "n.dube@gmail.com", phone: "+263772345678", date: "2026-03-06", time: "11:00", status: "PENDING", service: "Risk Assessment", reason: "Moving into new property — want a full assessment before moving in", location: "Bulawayo CBD", snake_concern: "Unknown" },
+  { id: "C1A9F3", user: "James Mutizwa", email: "j.mutizwa@yahoo.com", phone: "+263773456789", date: "2026-03-07", time: "14:00", status: "PENDING", service: "Fumigation", reason: "Have seen snake tracks in the roof twice this month — need fumigation", location: "Mutare", snake_concern: null },
+  { id: "D5K2L8", user: "Rudo Chikomo", email: "r.chikomo@gmail.com", phone: "+263774567890", date: "2026-03-07", time: "09:00", status: "CONFIRMED", service: "Risk Assessment", reason: "Post-bite follow-up consultation — recovering from puff adder bite, want to snake-proof home", location: "Gweru", snake_concern: "Puff Adder" },
+  { id: "E9M3N4", user: "Patrick Sibanda", email: "p.sibanda@gmail.com", phone: "+263775678901", date: "2026-03-08", time: "10:00", status: "CANCELLED", service: "Risk Assessment", reason: "Property inspection before purchase in a rural area", location: "Masvingo", snake_concern: null },
+  { id: "F2P6Q7", user: "Grace Mudyanadzo", email: "grace.m@hotmail.com", phone: "+263776789012", date: "2026-03-09", time: "11:00", status: "COMPLETED", service: "Snake Catch & Removal", reason: "Large boomslang in mango tree above kids' play area", location: "Harare North", snake_concern: "Boomslang" },
 ];
 
 const STATUS_CONFIG: Record<string, { label: string; cls: string; icon: React.ElementType }> = {
@@ -78,7 +78,7 @@ export default function BookingsPage() {
             <table className="w-full">
               <thead className="sticky top-0 bg-panel">
                 <tr className="border-b border-border">
-                  {["ID", "Client", "Date & Time", "Concern", "Status", ""].map((h) => (
+                  {["ID", "Client", "Service", "Date & Time", "Status", ""].map((h) => (
                     <th key={h} className="px-5 py-3 text-left text-[11px] font-semibold text-text-muted uppercase tracking-wide">
                       {h}
                     </th>
@@ -104,7 +104,7 @@ export default function BookingsPage() {
                         <div className="flex items-center gap-1"><CalendarDays size={11} />{b.date}</div>
                         <div className="flex items-center gap-1 mt-0.5"><Clock size={11} />{b.time}</div>
                       </td>
-                      <td className="px-5 py-3.5 text-xs text-text-muted max-w-[140px] truncate">{b.snake_concern || "—"}</td>
+                      <td className="px-5 py-3.5 text-xs text-text-muted max-w-[160px] truncate">{b.service}</td>
                       <td className="px-5 py-3.5">
                         <span className={`text-xs px-2.5 py-1 rounded-full font-semibold flex items-center gap-1 w-fit ${s.cls}`}>
                           <SIcon size={10} />{s.label}
@@ -150,6 +150,7 @@ export default function BookingsPage() {
                 { label: "Phone", value: selectedBooking.phone },
                 { label: "Date", value: `${selectedBooking.date} at ${selectedBooking.time}` },
                 { label: "Location", value: selectedBooking.location },
+                { label: "Service", value: selectedBooking.service },
                 { label: "Species Concern", value: selectedBooking.snake_concern || "Not specified" },
               ].map((r) => (
                 <div key={r.label}>

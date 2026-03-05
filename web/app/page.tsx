@@ -13,6 +13,7 @@ import {
   Star,
   Shield,
   Eye,
+  ShoppingBag,
 } from "lucide-react";
 
 const DANGER_CONFIG = {
@@ -65,6 +66,14 @@ const FEATURES = [
     accent: "warning",
     href: "/library",
     cta: "Explore",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Safety Equipment",
+    desc: "Professional snake traps, gaiters, handling tongs, restraint tubes and hooks — the same gear used by our expert team.",
+    accent: "safe",
+    href: "/shop",
+    cta: "Shop Now",
   },
 ];
 
@@ -271,7 +280,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {FEATURES.map((f) => {
               const Icon = f.icon;
               const accentColors: Record<string, string> = {
@@ -496,7 +505,7 @@ export default function HomePage() {
               <span className="text-smoke text-sm">Zimbabwe's Snake Intelligence Platform</span>
             </div>
             <div className="flex gap-8 text-sm text-smoke/60">
-              {["Identify", "Library", "Consult", "Emergency"].map((l) => (
+              {["Identify", "Library", "Consult", "Shop", "Emergency"].map((l) => (
                 <Link
                   key={l}
                   href={`/${l.toLowerCase()}`}

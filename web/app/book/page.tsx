@@ -1,7 +1,35 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CalendarDays, CheckCircle2, ChevronRight, Star, MapPin, Loader2 } from "lucide-react";
+import { CalendarDays, CheckCircle2, ChevronRight, Star, MapPin, Loader2, ShieldAlert, Bug, Search } from "lucide-react";
+
+const SERVICES = [
+  {
+    id: "snake-catch",
+    label: "Snake Catch & Removal",
+    icon: ShieldAlert,
+    desc: "Expert comes to your location, safely captures and relocates the snake.",
+    duration: "1–2 hrs",
+    accent: "#EF4444",
+  },
+  {
+    id: "fumigation",
+    label: "Fumigation",
+    icon: Bug,
+    desc: "Full property treatment to deter snakes and eliminate nesting conditions.",
+    duration: "2–4 hrs",
+    accent: "#F59E0B",
+  },
+  {
+    id: "risk-assessment",
+    label: "Risk Assessment",
+    icon: Search,
+    desc: "Thorough inspection and a written report identifying snake risk factors on your property.",
+    duration: "1–3 hrs",
+    accent: "#A78BFA",
+  },
+];
+
 import { getExperts, getAvailableSlots, createBooking } from "@/lib/api";
 import type { Expert } from "@/lib/types";
 import toast from "react-hot-toast";
@@ -25,6 +53,7 @@ function buildNext14Weekdays(): string[] {
 const NEXT_14_WEEKDAYS = buildNext14Weekdays();
 
 export default function BookPage() {
+  const [selectedService, setSelectedService] = useState<string>("");
   const [experts, setExperts] = useState<Expert[]>([]);
   const [selectedExpert, setSelectedExpert] = useState<Expert | null>(null);
   const [selectedDate, setSelectedDate] = useState<string>("");
@@ -47,7 +76,7 @@ export default function BookPage() {
   }, [selectedDate, selectedExpert]);
 
   const canSubmit =
-    selectedExpert && selectedDate && selectedSlot && form.name && form.email && form.phone && form.reason;
+    selectedService && selectedExpert && selectedDate && selectedSlot && form.name && form.email && form.phone && form.reason;
 
   const handleBook = async () => {
     if (!canSubmit) return;
@@ -89,7 +118,7 @@ export default function BookPage() {
             </div>
           </div>
           <button
-            onClick={() => { setBooked(null); setSelectedExpert(null); setSelectedDate(""); setSelectedSlot(""); }}
+            onClick={() => { setBooked(null); setSelectedService(""); setSelectedExpert(null); setSelectedDate(""); setSelectedSlot(""); }}
             className="px-6 py-3 rounded-2xl glass-green text-venom font-semibold text-sm"
           >
             Book Another Session
@@ -113,11 +142,46 @@ export default function BookPage() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Step 1 — Choose Expert */}
+          {/* Steps */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Step 1 — Service */}
             <div>
               <h2 className="font-semibold text-parchment mb-4 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">1</span>
+                Select a Service
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {SERVICES.map((svc) => {
+                  const Icon = svc.icon;
+                  const active = selectedService === svc.id;
+                  return (
+                    <button
+                      key={svc.id}
+                      onClick={() => setSelectedService(svc.id)}
+                      className={`text-left rounded-2xl p-5 border transition-all ${
+                        active ? "border-venom/40 glass-green" : "glass border-transparent hover:border-forest-600"
+                      }`}
+                    >
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                        style={{ background: `${svc.accent}18`, border: `1px solid ${svc.accent}30` }}
+                      >
+                        <Icon size={18} style={{ color: svc.accent }} />
+                      </div>
+                      <div className="font-semibold text-parchment text-sm mb-1">{svc.label}</div>
+                      <div className="text-smoke text-xs leading-relaxed mb-2">{svc.desc}</div>
+                      <div className="text-xs font-medium" style={{ color: svc.accent }}>{svc.duration}</div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Step 2 — Choose Expert */}
+            {selectedService && (
+            <div>
+              <h2 className="font-semibold text-parchment mb-4 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">2</span>
                 Choose an Expert
               </h2>
               <div className="space-y-3">
@@ -159,11 +223,14 @@ export default function BookPage() {
               </div>
             </div>
 
-            {/* Step 2 — Date */}
+            </div>
+            )}
+
+            {/* Step 3 — Date */}
             {selectedExpert && (
               <div>
                 <h2 className="font-semibold text-parchment mb-4 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">2</span>
+                  <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">3</span>
                   Pick a Date
                 </h2>
                 <div className="flex gap-2 overflow-x-auto pb-2">
@@ -193,11 +260,11 @@ export default function BookPage() {
               </div>
             )}
 
-            {/* Step 3 — Time */}
+            {/* Step 4 — Time */}
             {selectedDate && (
               <div>
                 <h2 className="font-semibold text-parchment mb-4 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">3</span>
+                  <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">4</span>
                   Select Time
                 </h2>
                 <div className="grid grid-cols-4 gap-2">
@@ -228,7 +295,7 @@ export default function BookPage() {
           {/* Right — Booking form */}
           <div>
             <h2 className="font-semibold text-parchment mb-4 flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">4</span>
+              <span className="w-6 h-6 rounded-full bg-venom/20 text-venom flex items-center justify-center text-xs font-bold">5</span>
               Your Details
             </h2>
             <div className="glass rounded-2xl p-5 space-y-4">
@@ -266,9 +333,10 @@ export default function BookPage() {
               </div>
 
               {/* Summary */}
-              {selectedExpert && selectedDate && selectedSlot && (
+              {selectedService && selectedExpert && selectedDate && selectedSlot && (
                 <div className="bg-venom/5 border border-venom/15 rounded-xl p-3 text-xs space-y-1">
                   <div className="text-venom font-semibold">Booking Summary</div>
+                  <div className="text-smoke">{SERVICES.find(s => s.id === selectedService)?.label}</div>
                   <div className="text-smoke">{selectedExpert.name}</div>
                   <div className="text-smoke">{selectedDate} at {selectedSlot}</div>
                 </div>

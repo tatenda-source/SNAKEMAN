@@ -10,12 +10,14 @@ import {
   Users,
   Settings,
   LogOut,
+  ShoppingBag,
 } from "lucide-react";
 
 const NAV = [
   { href: "/", icon: LayoutDashboard, label: "Dashboard" },
   { href: "/bookings", icon: CalendarDays, label: "Bookings" },
   { href: "/emergency", icon: AlertTriangle, label: "Emergency", badge: true },
+  { href: "/orders", icon: ShoppingBag, label: "Orders" },
   { href: "/content", icon: BookOpen, label: "Content" },
   { href: "/experts", icon: Users, label: "Experts" },
 ];

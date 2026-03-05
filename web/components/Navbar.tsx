@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/identify", label: "Identify" },
   { href: "/library", label: "Library" },
   { href: "/book", label: "Consult" },
+  { href: "/shop", label: "Shop" },
 ];
 
 export default function Navbar() {
