@@ -75,7 +75,7 @@ export default function EmergencyScreen() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient colors={["#1A0000", "#030A05"]} style={styles.bg} />
+      <LinearGradient colors={["#1A0000", "#0A0505"]} style={styles.bg} />
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         {/* Close */}
         <TouchableOpacity style={styles.closeBtn} onPress={() => router.back()}>
@@ -138,9 +138,9 @@ export default function EmergencyScreen() {
               />
               <TouchableOpacity style={styles.gpsBtn} onPress={getLocation} disabled={locLoading}>
                 {locLoading ? (
-                  <ActivityIndicator size="small" color="#22C55E" />
+                  <ActivityIndicator size="small" color="#DC2626" />
                 ) : (
-                  <MapPin size={16} color="#22C55E" />
+                  <MapPin size={16} color="#DC2626" />
                 )}
                 <Text style={styles.gpsBtnText}>{coords ? "GPS Captured" : "Get GPS Location"}</Text>
               </TouchableOpacity>
@@ -182,7 +182,7 @@ export default function EmergencyScreen() {
           /* RESULT */
           <View style={styles.resultContainer}>
             <View style={styles.successCard}>
-              <CheckCircle size={32} color="#22C55E" />
+              <CheckCircle size={32} color="#DC2626" />
               <Text style={styles.successTitle}>Report Submitted</Text>
               <Text style={styles.successId}>ID: {result.emergency_id}</Text>
               <Text style={styles.successSub}>Experts notified. Response est: {result.guidance?.estimated_response}</Text>
@@ -227,33 +227,33 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: 20, paddingBottom: 40 },
   closeBtn: { position: "absolute", top: 60, right: 20, zIndex: 10, width: 36, height: 36, borderRadius: 18, backgroundColor: "rgba(255,255,255,0.08)", alignItems: "center", justifyContent: "center" },
   iconWrap: { paddingTop: 80, alignItems: "center", marginBottom: 16 },
-  title: { fontSize: 36, fontWeight: "900", color: "#F0FDF4", textAlign: "center", marginBottom: 8 },
+  title: { fontSize: 36, fontWeight: "900", color: "#FFF5F5", textAlign: "center", marginBottom: 8 },
   subtitle: { color: "#6B7280", fontSize: 14, textAlign: "center", marginBottom: 6 },
   emergencyNote: { color: "#6B7280", fontSize: 13, textAlign: "center", marginBottom: 28 },
   phone999: { color: "#EF4444", fontWeight: "800" },
   card: { backgroundColor: "rgba(255,255,255,0.05)", borderRadius: 20, padding: 16, marginBottom: 14, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
   cardDanger: { backgroundColor: "rgba(239,68,68,0.08)", borderColor: "rgba(239,68,68,0.3)" },
   row: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
-  cardTitle: { color: "#F0FDF4", fontSize: 15, fontWeight: "700", marginBottom: 2 },
+  cardTitle: { color: "#FFF5F5", fontSize: 15, fontWeight: "700", marginBottom: 2 },
   cardSub: { color: "#6B7280", fontSize: 12 },
   label: { color: "#6B7280", fontSize: 11, fontWeight: "700", letterSpacing: 1, textTransform: "uppercase", marginBottom: 10 },
-  textarea: { color: "#F0FDF4", fontSize: 14, lineHeight: 22, minHeight: 80 },
-  input: { color: "#F0FDF4", fontSize: 14, backgroundColor: "rgba(255,255,255,0.06)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 10 },
-  gpsBtn: { flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: "rgba(34,197,94,0.08)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, borderWidth: 1, borderColor: "rgba(34,197,94,0.2)", alignSelf: "flex-start" },
-  gpsBtnText: { color: "#22C55E", fontSize: 13, fontWeight: "600" },
+  textarea: { color: "#FFF5F5", fontSize: 14, lineHeight: 22, minHeight: 80 },
+  input: { color: "#FFF5F5", fontSize: 14, backgroundColor: "rgba(255,255,255,0.06)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, marginBottom: 10 },
+  gpsBtn: { flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: "rgba(220,38,38,0.08)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, borderWidth: 1, borderColor: "rgba(220,38,38,0.2)", alignSelf: "flex-start" },
+  gpsBtnText: { color: "#DC2626", fontSize: 13, fontWeight: "600" },
   submitBtn: { borderRadius: 20, overflow: "hidden", shadowColor: "#EF4444", shadowOffset: { width: 0, height: 6 }, shadowOpacity: 0.5, shadowRadius: 16, elevation: 10, marginBottom: 20 },
   submitGradient: { flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 12, paddingVertical: 18 },
   submitText: { color: "#fff", fontSize: 15, fontWeight: "800", letterSpacing: 1.5 },
   resultContainer: { gap: 14 },
-  successCard: { backgroundColor: "rgba(34,197,94,0.08)", borderRadius: 24, padding: 24, alignItems: "center", borderWidth: 1, borderColor: "rgba(34,197,94,0.2)", gap: 8 },
-  successTitle: { color: "#F0FDF4", fontSize: 22, fontWeight: "800" },
-  successId: { color: "#22C55E", fontSize: 14, fontWeight: "700", fontVariant: ["tabular-nums"] },
+  successCard: { backgroundColor: "rgba(220,38,38,0.08)", borderRadius: 24, padding: 24, alignItems: "center", borderWidth: 1, borderColor: "rgba(220,38,38,0.2)", gap: 8 },
+  successTitle: { color: "#FFF5F5", fontSize: 22, fontWeight: "800" },
+  successId: { color: "#DC2626", fontSize: 14, fontWeight: "700", fontVariant: ["tabular-nums"] },
   successSub: { color: "#6B7280", fontSize: 12, textAlign: "center" },
   stepsCard: { backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 20, padding: 16, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
-  stepsTitle: { color: "#F0FDF4", fontSize: 15, fontWeight: "700", marginBottom: 14 },
+  stepsTitle: { color: "#FFF5F5", fontSize: 15, fontWeight: "700", marginBottom: 14 },
   stepRow: { flexDirection: "row", gap: 12, marginBottom: 10, alignItems: "flex-start" },
-  stepNum: { width: 24, height: 24, borderRadius: 12, backgroundColor: "rgba(34,197,94,0.15)", alignItems: "center", justifyContent: "center", flexShrink: 0 },
-  stepNumText: { color: "#22C55E", fontSize: 11, fontWeight: "700" },
+  stepNum: { width: 24, height: 24, borderRadius: 12, backgroundColor: "rgba(220,38,38,0.15)", alignItems: "center", justifyContent: "center", flexShrink: 0 },
+  stepNumText: { color: "#DC2626", fontSize: 11, fontWeight: "700" },
   stepText: { color: "#9CA3AF", fontSize: 13, lineHeight: 20, flex: 1 },
   callBtn: { backgroundColor: "#EF4444", borderRadius: 20, paddingVertical: 16, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 10 },
   callBtnText: { color: "#fff", fontSize: 15, fontWeight: "800", letterSpacing: 1 },

@@ -15,7 +15,7 @@ import {
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const STAT_CARDS = [
-  { label: "Total Bookings", value: "142", change: "+12 this week", icon: CalendarDays, color: "#22C55E", bg: "rgba(34,197,94,0.08)" },
+  { label: "Total Bookings", value: "142", change: "+12 this week", icon: CalendarDays, color: "#DC2626", bg: "rgba(220,38,38,0.08)" },
   { label: "Active Emergencies", value: "4", change: "3 require attention", icon: AlertTriangle, color: "#EF4444", bg: "rgba(239,68,68,0.08)", urgent: true },
   { label: "Consultations Done", value: "847", change: "+23 this month", icon: CheckCircle2, color: "#60A5FA", bg: "rgba(96,165,250,0.08)" },
   { label: "Library Views", value: "12.4k", change: "+8% vs last month", icon: Eye, color: "#F59E0B", bg: "rgba(245,158,11,0.08)" },
@@ -116,8 +116,8 @@ export default function DashboardPage() {
             <AreaChart data={CHART_DATA}>
               <defs>
                 <linearGradient id="colorBookings" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#22C55E" stopOpacity={0.2} />
-                  <stop offset="95%" stopColor="#22C55E" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#DC2626" stopOpacity={0.2} />
+                  <stop offset="95%" stopColor="#DC2626" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="colorEmergencies" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#EF4444" stopOpacity={0.2} />
@@ -130,7 +130,7 @@ export default function DashboardPage() {
                 contentStyle={{ background: "#161B24", border: "1px solid #1E2739", borderRadius: "8px", color: "#E2E8F0" }}
                 labelStyle={{ color: "#64748B" }}
               />
-              <Area type="monotone" dataKey="bookings" stroke="#22C55E" strokeWidth={2} fill="url(#colorBookings)" name="Bookings" />
+              <Area type="monotone" dataKey="bookings" stroke="#DC2626" strokeWidth={2} fill="url(#colorBookings)" name="Bookings" />
               <Area type="monotone" dataKey="emergencies" stroke="#EF4444" strokeWidth={2} fill="url(#colorEmergencies)" name="Emergencies" />
             </AreaChart>
           </ResponsiveContainer>

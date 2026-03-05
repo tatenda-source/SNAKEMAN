@@ -13,8 +13,8 @@ const config: Config = {
         panel: "#161B24",
         border: "#1E2739",
         accent: {
-          DEFAULT: "#22C55E",
-          dim: "#15803D",
+          DEFAULT: "#DC2626",
+          dim: "#991B1B",
         },
         danger: { DEFAULT: "#EF4444" },
         warning: { DEFAULT: "#F59E0B" },

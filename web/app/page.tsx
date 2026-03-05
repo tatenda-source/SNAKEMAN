@@ -95,16 +95,16 @@ function SnakeSVG() {
       {/* Body */}
       <path
         d="M50 250 Q100 200 150 220 Q200 240 250 200 Q300 160 350 180 Q380 190 390 160"
-        stroke="#22C55E"
+        stroke="#DC2626"
         strokeWidth="18"
         strokeLinecap="round"
         fill="none"
-        className="drop-shadow-[0_0_20px_rgba(34,197,94,0.6)]"
+        className="drop-shadow-[0_0_20px_rgba(220,38,38,0.6)]"
       />
       {/* Scale detail lines */}
       <path
         d="M50 250 Q100 200 150 220 Q200 240 250 200 Q300 160 350 180 Q380 190 390 160"
-        stroke="#4ADE80"
+        stroke="#F87171"
         strokeWidth="3"
         strokeLinecap="round"
         strokeDasharray="8 12"
@@ -112,27 +112,27 @@ function SnakeSVG() {
         opacity="0.6"
       />
       {/* Head */}
-      <ellipse cx="392" cy="155" rx="16" ry="10" fill="#15803D" />
-      <ellipse cx="392" cy="155" rx="14" ry="8" fill="#22C55E" />
+      <ellipse cx="392" cy="155" rx="16" ry="10" fill="#991B1B" />
+      <ellipse cx="392" cy="155" rx="14" ry="8" fill="#DC2626" />
       {/* Eye */}
-      <circle cx="399" cy="151" r="3" fill="#030A05" />
+      <circle cx="399" cy="151" r="3" fill="#0A0505" />
       <circle cx="400" cy="150" r="1" fill="#F59E0B" />
       {/* Tongue */}
       <path d="M406 157 L416 153 M416 153 L421 149 M416 153 L421 156" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" />
       {/* Tail */}
-      <path d="M50 250 Q30 265 20 255 Q15 250 22 245" stroke="#22C55E" strokeWidth="8" strokeLinecap="round" fill="none" />
+      <path d="M50 250 Q30 265 20 255 Q15 250 22 245" stroke="#DC2626" strokeWidth="8" strokeLinecap="round" fill="none" />
       {/* Ambient glow particles */}
-      <circle cx="150" cy="220" r="2" fill="#4ADE80" opacity="0.4" />
-      <circle cx="250" cy="200" r="2" fill="#4ADE80" opacity="0.4" />
-      <circle cx="350" cy="180" r="2" fill="#4ADE80" opacity="0.3" />
+      <circle cx="150" cy="220" r="2" fill="#F87171" opacity="0.4" />
+      <circle cx="250" cy="200" r="2" fill="#F87171" opacity="0.4" />
+      <circle cx="350" cy="180" r="2" fill="#F87171" opacity="0.3" />
     </svg>
   );
 }
 
 function SnakeScalePattern({ color = "green" }: { color?: string }) {
-  const fill = color === "red" ? "rgba(239,68,68,0.03)" : "rgba(34,197,94,0.025)";
-  const stroke = color === "red" ? "rgba(239,68,68,0.13)" : "rgba(34,197,94,0.11)";
-  const rib = color === "red" ? "rgba(239,68,68,0.06)" : "rgba(34,197,94,0.05)";
+  const fill = color === "red" ? "rgba(239,68,68,0.03)" : "rgba(220,38,38,0.025)";
+  const stroke = color === "red" ? "rgba(239,68,68,0.13)" : "rgba(220,38,38,0.11)";
+  const rib = color === "red" ? "rgba(239,68,68,0.06)" : "rgba(220,38,38,0.05)";
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='40' height='20' viewBox='0 0 40 20'><path d='M20,0 L40,10 L20,20 L0,10 Z' fill='${fill}' stroke='${stroke}' stroke-width='0.7'/><line x1='20' y1='1' x2='20' y2='19' stroke='${rib}' stroke-width='0.5'/></svg>`;
   return (
     <div
@@ -175,7 +175,7 @@ export default function HomePage() {
           <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-green text-venom text-xs font-semibold tracking-widest uppercase mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-venom animate-pulse" />
-              Chawa's WildCatcher · Zimbabwe
+              chawaswildadventures · Zimbabwe
             </div>
 
             <h1 className="font-display text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] mb-8">
@@ -282,7 +282,7 @@ export default function HomePage() {
               Everything You Need to Stay Safe
             </h2>
             <p className="text-smoke text-lg max-w-xl mx-auto">
-              From instant AI identification to emergency response — Chawa's WildCatcher has you covered across Zimbabwe.
+              From instant AI identification to emergency response — chawaswildadventures has you covered across Zimbabwe.
             </p>
           </div>
 
@@ -290,7 +290,7 @@ export default function HomePage() {
             {FEATURES.map((f) => {
               const Icon = f.icon;
               const accentColors: Record<string, string> = {
-                venom: "#22C55E",
+                venom: "#DC2626",
                 safe: "#A78BFA",
                 danger: "#EF4444",
                 warning: "#F59E0B",
@@ -606,7 +606,7 @@ export default function HomePage() {
                 title: "Snake Awareness",
                 desc: "Learn to identify the 8 species found across Zimbabwe's provinces — from Harare suburbs to the Lowveld. Understand their habitats, seasonal activity, and warning signs.",
                 topics: ["Species ID", "Regional habitats", "Seasonal patterns", "Body language"],
-                accent: "#22C55E",
+                accent: "#DC2626",
                 href: "/library",
                 cta: "Explore Library",
               },
@@ -689,9 +689,8 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <div className="flex flex-col leading-none gap-px">
-                <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-smoke/50">Chawa's</span>
-                <span className="font-display text-lg font-black leading-none">
-                  <span className="text-parchment">Wild</span><span className="text-venom">Catcher</span>
+                <span className="font-display text-lg font-black leading-none text-venom">
+                  chawaswildadventures
                 </span>
               </div>
               <span className="text-smoke text-sm">Zimbabwe's Snake Intelligence Platform</span>

@@ -12,7 +12,7 @@ const PRODUCTS = [
     desc: "Corrosion-resistant galvanised steel trap designed for Zimbabwe's common species. Bait-triggered one-way door, safe for non-venomous and mildly venomous snakes. Best for Rock Pythons and Puff Adders.",
     price: 85,
     unit: "USD",
-    accent: "#22C55E",
+    accent: "#DC2626",
     badge: "Best Seller",
     badgeCls: "bg-venom/20 text-venom border border-venom/30",
     specs: ["Galvanised steel", "60cm × 18cm", "One-way door", "Safe release latch"],
@@ -33,7 +33,7 @@ const PRODUCTS = [
     id: "handling-tongs",
     name: "Snake Handling Tongs",
     subtitle: "Professional capture tongs",
-    desc: "1.2m stainless steel tongs with soft-grip jaw to prevent injury to the snake. Spring-loaded for precision control. Used by Chawa's field team for all capture and relocation work.",
+    desc: "1.2m stainless steel tongs with soft-grip jaw to prevent injury to the snake. Spring-loaded for precision control. Used by chawaswildadventures field team for all capture and relocation work.",
     price: 55,
     unit: "USD",
     accent: "#60A5FA",
@@ -151,7 +151,7 @@ export default function ShopPage() {
           </div>
           <h1 className="font-display text-5xl font-bold text-parchment mb-4">Snake Safety Shop</h1>
           <p className="text-smoke text-lg max-w-lg mx-auto">
-            Professional-grade handling equipment and protective gear — the same kit used by Chawa's expert team.
+            Professional-grade handling equipment and protective gear — the same kit used by chawaswildadventures expert team.
           </p>
         </div>
 

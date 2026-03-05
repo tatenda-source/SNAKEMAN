@@ -20,7 +20,7 @@ const DANGER_COLORS: Record<string, string> = {
   CRITICAL: "#EF4444",
   HIGH: "#F59E0B",
   MEDIUM: "#A78BFA",
-  LOW: "#22C55E",
+  LOW: "#DC2626",
 };
 
 export default function IdentifyScreen() {
@@ -73,7 +73,7 @@ export default function IdentifyScreen() {
     }
   };
 
-  const dangerColor = result?.danger_level ? DANGER_COLORS[result.danger_level] : "#22C55E";
+  const dangerColor = result?.danger_level ? DANGER_COLORS[result.danger_level] : "#DC2626";
 
   return (
     <View style={styles.container}>
@@ -88,16 +88,16 @@ export default function IdentifyScreen() {
         {!image ? (
           <View style={styles.uploadContainer}>
             <View style={styles.uploadBox}>
-              <Camera size={36} color="rgba(34,197,94,0.4)" />
+              <Camera size={36} color="rgba(220,38,38,0.4)" />
               <Text style={styles.uploadText}>Take or upload a photo</Text>
             </View>
             <View style={styles.uploadBtns}>
               <TouchableOpacity style={styles.uploadBtn} onPress={() => pickImage("camera")} activeOpacity={0.8}>
-                <Camera size={20} color="#22C55E" />
+                <Camera size={20} color="#DC2626" />
                 <Text style={styles.uploadBtnText}>Camera</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.uploadBtn} onPress={() => pickImage("library")} activeOpacity={0.8}>
-                <Upload size={20} color="#22C55E" />
+                <Upload size={20} color="#DC2626" />
                 <Text style={styles.uploadBtnText}>Gallery</Text>
               </TouchableOpacity>
             </View>
@@ -138,12 +138,12 @@ export default function IdentifyScreen() {
             disabled={loading || !image}
             activeOpacity={0.8}
           >
-            <LinearGradient colors={["#22C55E", "#15803D"]} style={styles.identifyGradient}>
+            <LinearGradient colors={["#DC2626", "#991B1B"]} style={styles.identifyGradient}>
               {loading ? (
                 <ActivityIndicator color="#fff" />
               ) : (
                 <>
-                  <Camera size={18} color="#030A05" />
+                  <Camera size={18} color="#0A0505" />
                   <Text style={styles.identifyBtnText}>Identify Snake</Text>
                 </>
               )}
@@ -237,27 +237,27 @@ export default function IdentifyScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#030A05" },
+  container: { flex: 1, backgroundColor: "#0A0505" },
   scroll: { paddingHorizontal: 20, paddingBottom: 40 },
   header: { paddingTop: 64, marginBottom: 24 },
-  title: { fontSize: 32, fontWeight: "900", color: "#F0FDF4", marginBottom: 6 },
+  title: { fontSize: 32, fontWeight: "900", color: "#FFF5F5", marginBottom: 6 },
   subtitle: { color: "#4B5563", fontSize: 14 },
-  uploadContainer: { backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 24, padding: 20, borderWidth: 2, borderStyle: "dashed", borderColor: "rgba(34,197,94,0.2)", marginBottom: 16, alignItems: "center" },
+  uploadContainer: { backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 24, padding: 20, borderWidth: 2, borderStyle: "dashed", borderColor: "rgba(220,38,38,0.2)", marginBottom: 16, alignItems: "center" },
   uploadBox: { alignItems: "center", paddingVertical: 24, gap: 12 },
   uploadText: { color: "#6B7280", fontSize: 14 },
   uploadBtns: { flexDirection: "row", gap: 12, width: "100%" },
-  uploadBtn: { flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, backgroundColor: "rgba(34,197,94,0.08)", borderRadius: 16, paddingVertical: 12, borderWidth: 1, borderColor: "rgba(34,197,94,0.2)" },
-  uploadBtnText: { color: "#22C55E", fontSize: 14, fontWeight: "600" },
+  uploadBtn: { flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, backgroundColor: "rgba(220,38,38,0.08)", borderRadius: 16, paddingVertical: 12, borderWidth: 1, borderColor: "rgba(220,38,38,0.2)" },
+  uploadBtnText: { color: "#DC2626", fontSize: 14, fontWeight: "600" },
   imagePreview: { borderRadius: 24, overflow: "hidden", marginBottom: 16 },
   previewImage: { width: "100%", height: 240, borderRadius: 24 },
   changeImage: { position: "absolute", bottom: 12, right: 12, backgroundColor: "rgba(0,0,0,0.7)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 8 },
-  changeImageText: { color: "#F0FDF4", fontSize: 12, fontWeight: "600" },
+  changeImageText: { color: "#FFF5F5", fontSize: 12, fontWeight: "600" },
   contextBox: { backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 20, padding: 16, marginBottom: 16, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
   label: { color: "#6B7280", fontSize: 11, fontWeight: "600", letterSpacing: 1, textTransform: "uppercase", marginBottom: 10 },
-  contextInput: { color: "#F0FDF4", fontSize: 14, lineHeight: 22 },
-  identifyBtn: { marginBottom: 16, borderRadius: 20, overflow: "hidden", shadowColor: "#22C55E", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 12, elevation: 8 },
+  contextInput: { color: "#FFF5F5", fontSize: 14, lineHeight: 22 },
+  identifyBtn: { marginBottom: 16, borderRadius: 20, overflow: "hidden", shadowColor: "#DC2626", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 12, elevation: 8 },
   identifyGradient: { flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 10, paddingVertical: 16 },
-  identifyBtnText: { color: "#030A05", fontSize: 15, fontWeight: "800", letterSpacing: 0.5 },
+  identifyBtnText: { color: "#0A0505", fontSize: 15, fontWeight: "800", letterSpacing: 0.5 },
   disabledBtn: { opacity: 0.5 },
   loadingBox: { alignItems: "center", paddingVertical: 16 },
   loadingText: { color: "#6B7280", fontSize: 13 },
@@ -266,20 +266,20 @@ const styles = StyleSheet.create({
   resultHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 },
   dangerBadge: { borderRadius: 10, paddingHorizontal: 10, paddingVertical: 4, borderWidth: 1, alignSelf: "flex-start", marginBottom: 8 },
   dangerBadgeText: { fontSize: 10, fontWeight: "700", letterSpacing: 0.5 },
-  snakeName: { fontSize: 24, fontWeight: "800", color: "#F0FDF4", marginBottom: 2 },
+  snakeName: { fontSize: 24, fontWeight: "800", color: "#FFF5F5", marginBottom: 2 },
   snakeSci: { fontSize: 12, color: "#6B7280", fontStyle: "italic" },
   confidence: { fontSize: 28, fontWeight: "800" },
   actionBox: { backgroundColor: "rgba(0,0,0,0.2)", borderRadius: 16, padding: 12, marginBottom: 12 },
   actionLabel: { color: "#6B7280", fontSize: 10, fontWeight: "700", letterSpacing: 1, marginBottom: 6 },
-  actionText: { color: "#F0FDF4", fontSize: 13, lineHeight: 20 },
+  actionText: { color: "#FFF5F5", fontSize: 13, lineHeight: 20 },
   featuresContainer: { flexDirection: "row", flexWrap: "wrap", gap: 6 },
   featureTag: { backgroundColor: "rgba(255,255,255,0.08)", borderRadius: 10, paddingHorizontal: 10, paddingVertical: 4 },
-  featureTagText: { color: "#D1FAE5", fontSize: 11 },
+  featureTagText: { color: "#FFE4E6", fontSize: 11 },
   reasoningBox: { backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 20, padding: 16, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
   reasoningLabel: { color: "#6B7280", fontSize: 11, fontWeight: "700", letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 },
   reasoningText: { color: "#9CA3AF", fontSize: 13, lineHeight: 20 },
-  firstAidBox: { backgroundColor: "rgba(34,197,94,0.06)", borderRadius: 20, padding: 16, borderWidth: 1, borderColor: "rgba(34,197,94,0.15)" },
-  firstAidLabel: { color: "#22C55E", fontSize: 11, fontWeight: "700", letterSpacing: 1, marginBottom: 8 },
+  firstAidBox: { backgroundColor: "rgba(220,38,38,0.06)", borderRadius: 20, padding: 16, borderWidth: 1, borderColor: "rgba(220,38,38,0.15)" },
+  firstAidLabel: { color: "#DC2626", fontSize: 11, fontWeight: "700", letterSpacing: 1, marginBottom: 8 },
   firstAidText: { color: "#9CA3AF", fontSize: 13, lineHeight: 20 },
   emergencyCta: { backgroundColor: "#EF4444", borderRadius: 20, padding: 16, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 10, shadowColor: "#EF4444", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.5, shadowRadius: 12, elevation: 8 },
   emergencyCtaText: { color: "#fff", fontSize: 15, fontWeight: "800", letterSpacing: 1 },

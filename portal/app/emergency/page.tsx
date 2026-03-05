@@ -179,7 +179,7 @@ export default function EmergencyPortalPage() {
                 className={`rounded-2xl p-4 cursor-pointer transition-all border ${
                   selected?.id === e.id ? "border-accent/30" : ""
                 } ${e.status === "RESOLVED" ? "opacity-40" : ""}`}
-                style={{ background: style.bg, borderColor: selected?.id === e.id ? "#22C55E" : style.border }}
+                style={{ background: style.bg, borderColor: selected?.id === e.id ? "#DC2626" : style.border }}
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="font-mono text-[10px] text-text-muted">{e.id.slice(0, 16)}</div>

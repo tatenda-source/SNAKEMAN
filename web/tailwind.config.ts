@@ -10,21 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         // Core dark palette
-        void: "#030A05",
+        void: "#0A0505",
         forest: {
-          950: "#040C06",
-          900: "#071209",
-          800: "#0D1F10",
-          700: "#132B17",
-          600: "#1A3D1F",
-          500: "#235229",
-          400: "#2D6A34",
+          950: "#0A0606",
+          900: "#120A09",
+          800: "#1F1210",
+          700: "#2B1A17",
+          600: "#3D1F1A",
+          500: "#522923",
+          400: "#6A342D",
         },
         // Accent system
         venom: {
-          DEFAULT: "#22C55E",
-          dim: "#15803D",
-          glow: "#4ADE80",
+          DEFAULT: "#DC2626",
+          dim: "#991B1B",
+          glow: "#F87171",
         },
         danger: {
           DEFAULT: "#EF4444",
@@ -41,8 +41,8 @@ const config: Config = {
           dim: "#4C1D95",
         },
         // Text
-        parchment: "#F0FDF4",
-        mist: "#D1FAE5",
+        parchment: "#FFF5F5",
+        mist: "#FFE4E6",
         smoke: "#6B7280",
       },
       fontFamily: {
@@ -53,11 +53,11 @@ const config: Config = {
       backgroundImage: {
         "scales-pattern": "url('/patterns/scales.svg')",
         "hero-gradient":
-          "radial-gradient(ellipse at top left, #132B17 0%, #030A05 50%, #040C06 100%)",
+          "radial-gradient(ellipse at top left, #2B1A17 0%, #0A0505 50%, #0A0606 100%)",
         "card-gradient":
           "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
         "danger-gradient":
-          "radial-gradient(ellipse at center, #450A0A 0%, #030A05 70%)",
+          "radial-gradient(ellipse at center, #450A0A 0%, #0A0505 70%)",
       },
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
@@ -80,8 +80,8 @@ const config: Config = {
           "50%": { transform: "scale(1.02)" },
         },
         glowRed: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(239,68,68,0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(239,68,68,0.8), 0 0 80px rgba(239,68,68,0.3)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(220,38,38,0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(220,38,38,0.8), 0 0 80px rgba(220,38,38,0.3)" },
         },
       },
       backdropBlur: {

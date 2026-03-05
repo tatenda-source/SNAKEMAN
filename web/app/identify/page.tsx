@@ -12,7 +12,7 @@ const DANGER_COLORS: Record<string, { bg: string; border: string; text: string; 
   CRITICAL: { bg: "rgba(239,68,68,0.12)", border: "rgba(239,68,68,0.4)", text: "#FCA5A5", label: "CRITICAL" },
   HIGH: { bg: "rgba(245,158,11,0.12)", border: "rgba(245,158,11,0.4)", text: "#FCD34D", label: "HIGH DANGER" },
   MEDIUM: { bg: "rgba(167,139,250,0.12)", border: "rgba(167,139,250,0.4)", text: "#C4B5FD", label: "MEDIUM RISK" },
-  LOW: { bg: "rgba(34,197,94,0.12)", border: "rgba(34,197,94,0.4)", text: "#86EFAC", label: "LOW RISK" },
+  LOW: { bg: "rgba(220,38,38,0.12)", border: "rgba(220,38,38,0.4)", text: "#F87171", label: "LOW RISK" },
 };
 
 export default function IdentifyPage() {

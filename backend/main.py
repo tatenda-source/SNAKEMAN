@@ -11,12 +11,12 @@ from routes import identify, bookings, emergency, content, auth, experts
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("SNAKEMAN API starting up...")
+    print("chawaswildadventures API starting up...")
     yield
-    print("SNAKEMAN API shutting down...")
+    print("chawaswildadventures API shutting down...")
 
 app = FastAPI(
-    title="SNAKEMAN API",
+    title="chawaswildadventures API",
     description="Zimbabwe Snake Identification & Expert Consultation Platform",
     version="1.0.0",
     lifespan=lifespan,
@@ -44,7 +44,7 @@ app.include_router(experts.router, prefix="/api/experts", tags=["Experts"])
 
 @app.get("/health")
 async def health_check():
-    return {"status": "ok", "service": "snakeman-api", "version": "1.0.0"}
+    return {"status": "ok", "service": "chawaswildadventures-api", "version": "1.0.0"}
 
 @app.get("/api/snakes")
 async def get_all_snakes():

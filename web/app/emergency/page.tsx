@@ -21,7 +21,7 @@ const SEVERITY_COLORS: Record<string, { bg: string; border: string; text: string
   CRITICAL: { bg: "rgba(239,68,68,0.15)", border: "rgba(239,68,68,0.5)", text: "#FCA5A5" },
   HIGH: { bg: "rgba(245,158,11,0.12)", border: "rgba(245,158,11,0.4)", text: "#FCD34D" },
   MEDIUM: { bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)", text: "#C4B5FD" },
-  LOW: { bg: "rgba(34,197,94,0.1)", border: "rgba(34,197,94,0.3)", text: "#86EFAC" },
+  LOW: { bg: "rgba(220,38,38,0.1)", border: "rgba(220,38,38,0.3)", text: "#F87171" },
 };
 
 export default function EmergencyPage() {

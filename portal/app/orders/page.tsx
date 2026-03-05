@@ -122,7 +122,7 @@ export default function OrdersPage() {
         {[
           { label: "Pending", value: stats.pending, color: "#F59E0B", bg: "rgba(245,158,11,0.08)", icon: Clock },
           { label: "In Transit", value: stats.dispatched, color: "#60A5FA", bg: "rgba(96,165,250,0.08)", icon: Truck },
-          { label: "Delivered", value: stats.delivered, color: "#22C55E", bg: "rgba(34,197,94,0.08)", icon: CheckCircle2 },
+          { label: "Delivered", value: stats.delivered, color: "#DC2626", bg: "rgba(220,38,38,0.08)", icon: CheckCircle2 },
           { label: "Revenue", value: `$${stats.revenue}`, color: "#A78BFA", bg: "rgba(167,139,250,0.08)", icon: Package },
         ].map((s) => {
           const Icon = s.icon;

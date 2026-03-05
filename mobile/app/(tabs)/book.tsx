@@ -74,7 +74,7 @@ export default function BookScreen() {
   if (booked) {
     return (
       <View style={[styles.container, styles.centerContent]}>
-        <CheckCircle size={52} color="#22C55E" />
+        <CheckCircle size={52} color="#DC2626" />
         <Text style={styles.successTitle}>Booking Confirmed!</Text>
         <View style={styles.bookingIdBox}>
           <Text style={styles.bookingIdLabel}>Your Booking ID</Text>
@@ -125,7 +125,7 @@ export default function BookScreen() {
                 </View>
               </View>
               <View style={[styles.availBadge, e.available ? styles.availGreen : styles.availGrey]}>
-                <Text style={[styles.availText, { color: e.available ? "#22C55E" : "#6B7280" }]}>
+                <Text style={[styles.availText, { color: e.available ? "#DC2626" : "#6B7280" }]}>
                   {e.available ? "Available" : "Busy"}
                 </Text>
               </View>
@@ -213,12 +213,12 @@ export default function BookScreen() {
 
         {/* CTA */}
         <TouchableOpacity style={styles.bookBtn} onPress={handleBook} disabled={loading} activeOpacity={0.85}>
-          <LinearGradient colors={["#22C55E", "#15803D"]} style={styles.bookGradient}>
+          <LinearGradient colors={["#DC2626", "#991B1B"]} style={styles.bookGradient}>
             {loading ? (
-              <ActivityIndicator color="#030A05" />
+              <ActivityIndicator color="#0A0505" />
             ) : (
               <>
-                <CalendarDays size={18} color="#030A05" />
+                <CalendarDays size={18} color="#0A0505" />
                 <Text style={styles.bookBtnText}>Confirm Booking</Text>
               </>
             )}
@@ -232,54 +232,54 @@ export default function BookScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#030A05" },
+  container: { flex: 1, backgroundColor: "#0A0505" },
   centerContent: { alignItems: "center", justifyContent: "center", gap: 16, paddingHorizontal: 40 },
   scroll: { paddingHorizontal: 20, paddingBottom: 40 },
   header: { paddingTop: 64, marginBottom: 24 },
-  title: { fontSize: 32, fontWeight: "900", color: "#F0FDF4", marginBottom: 4 },
+  title: { fontSize: 32, fontWeight: "900", color: "#FFF5F5", marginBottom: 4 },
   subtitle: { color: "#4B5563", fontSize: 14 },
   stepLabel: { color: "#6B7280", fontSize: 11, fontWeight: "700", letterSpacing: 1, textTransform: "uppercase", marginBottom: 12, marginTop: 20 },
   expertList: { gap: 10 },
   expertCard: { flexDirection: "row", alignItems: "center", gap: 12, backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 20, padding: 14, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
-  expertSelected: { borderColor: "rgba(34,197,94,0.4)", backgroundColor: "rgba(34,197,94,0.06)" },
+  expertSelected: { borderColor: "rgba(220,38,38,0.4)", backgroundColor: "rgba(220,38,38,0.06)" },
   expertUnavailable: { opacity: 0.5 },
-  expertAvatar: { width: 44, height: 44, borderRadius: 14, backgroundColor: "rgba(34,197,94,0.1)", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: "rgba(34,197,94,0.2)" },
-  expertInitials: { color: "#22C55E", fontSize: 16, fontWeight: "800" },
+  expertAvatar: { width: 44, height: 44, borderRadius: 14, backgroundColor: "rgba(220,38,38,0.1)", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: "rgba(220,38,38,0.2)" },
+  expertInitials: { color: "#DC2626", fontSize: 16, fontWeight: "800" },
   expertInfo: { flex: 1 },
-  expertName: { color: "#F0FDF4", fontSize: 13, fontWeight: "700", marginBottom: 2 },
+  expertName: { color: "#FFF5F5", fontSize: 13, fontWeight: "700", marginBottom: 2 },
   expertTitle: { color: "#6B7280", fontSize: 11, marginBottom: 4 },
   expertMeta: { flexDirection: "row", alignItems: "center", gap: 4 },
   expertRating: { color: "#F59E0B", fontSize: 11, marginRight: 6 },
   expertLocation: { color: "#4B5563", fontSize: 11 },
   availBadge: { borderRadius: 10, paddingHorizontal: 8, paddingVertical: 4, borderWidth: 1 },
-  availGreen: { backgroundColor: "rgba(34,197,94,0.1)", borderColor: "rgba(34,197,94,0.25)" },
+  availGreen: { backgroundColor: "rgba(220,38,38,0.1)", borderColor: "rgba(220,38,38,0.25)" },
   availGrey: { backgroundColor: "rgba(107,114,128,0.1)", borderColor: "rgba(107,114,128,0.25)" },
   availText: { fontSize: 10, fontWeight: "600" },
   dateRow: { gap: 10, paddingBottom: 4 },
   dateChip: { width: 62, alignItems: "center", backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 16, paddingVertical: 12, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
-  dateChipSelected: { backgroundColor: "#22C55E", borderColor: "#22C55E" },
+  dateChipSelected: { backgroundColor: "#DC2626", borderColor: "#DC2626" },
   dateDay: { color: "#6B7280", fontSize: 10, fontWeight: "600", marginBottom: 2 },
-  dateNum: { color: "#F0FDF4", fontSize: 20, fontWeight: "800" },
+  dateNum: { color: "#FFF5F5", fontSize: 20, fontWeight: "800" },
   dateMon: { color: "#6B7280", fontSize: 10, marginTop: 2 },
-  dateTextSelected: { color: "#030A05" },
+  dateTextSelected: { color: "#0A0505" },
   timeGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
   timeChip: { width: "22%", alignItems: "center", backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 14, paddingVertical: 10, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)" },
-  timeChipSelected: { backgroundColor: "#22C55E", borderColor: "#22C55E" },
+  timeChipSelected: { backgroundColor: "#DC2626", borderColor: "#DC2626" },
   timeText: { color: "#9CA3AF", fontSize: 13, fontWeight: "600" },
-  timeTextSelected: { color: "#030A05" },
+  timeTextSelected: { color: "#0A0505" },
   formCard: { backgroundColor: "rgba(255,255,255,0.04)", borderRadius: 20, padding: 16, borderWidth: 1, borderColor: "rgba(255,255,255,0.08)", gap: 14 },
   formField: {},
   formLabel: { color: "#6B7280", fontSize: 11, fontWeight: "600", letterSpacing: 0.5, marginBottom: 6 },
-  formInput: { backgroundColor: "rgba(255,255,255,0.06)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, color: "#F0FDF4", fontSize: 14 },
+  formInput: { backgroundColor: "rgba(255,255,255,0.06)", borderRadius: 12, paddingHorizontal: 14, paddingVertical: 10, color: "#FFF5F5", fontSize: 14 },
   formTextarea: { minHeight: 72 },
-  bookBtn: { marginTop: 20, borderRadius: 20, overflow: "hidden", shadowColor: "#22C55E", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 12, elevation: 8 },
+  bookBtn: { marginTop: 20, borderRadius: 20, overflow: "hidden", shadowColor: "#DC2626", shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 12, elevation: 8 },
   bookGradient: { flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 10, paddingVertical: 16 },
-  bookBtnText: { color: "#030A05", fontSize: 15, fontWeight: "800" },
-  successTitle: { fontSize: 26, fontWeight: "800", color: "#F0FDF4", textAlign: "center" },
-  bookingIdBox: { backgroundColor: "rgba(34,197,94,0.08)", borderRadius: 20, padding: 20, alignItems: "center", borderWidth: 1, borderColor: "rgba(34,197,94,0.2)", width: "100%" },
+  bookBtnText: { color: "#0A0505", fontSize: 15, fontWeight: "800" },
+  successTitle: { fontSize: 26, fontWeight: "800", color: "#FFF5F5", textAlign: "center" },
+  bookingIdBox: { backgroundColor: "rgba(220,38,38,0.08)", borderRadius: 20, padding: 20, alignItems: "center", borderWidth: 1, borderColor: "rgba(220,38,38,0.2)", width: "100%" },
   bookingIdLabel: { color: "#6B7280", fontSize: 11, fontWeight: "600", marginBottom: 6 },
-  bookingId: { color: "#22C55E", fontSize: 28, fontWeight: "800", fontVariant: ["tabular-nums"] },
+  bookingId: { color: "#DC2626", fontSize: 28, fontWeight: "800", fontVariant: ["tabular-nums"] },
   successNote: { color: "#6B7280", fontSize: 13, textAlign: "center" },
-  resetBtn: { backgroundColor: "rgba(34,197,94,0.08)", borderRadius: 20, paddingVertical: 14, paddingHorizontal: 32, borderWidth: 1, borderColor: "rgba(34,197,94,0.2)" },
-  resetBtnText: { color: "#22C55E", fontSize: 14, fontWeight: "700" },
+  resetBtn: { backgroundColor: "rgba(220,38,38,0.08)", borderRadius: 20, paddingVertical: 14, paddingHorizontal: 32, borderWidth: 1, borderColor: "rgba(220,38,38,0.2)" },
+  resetBtnText: { color: "#DC2626", fontSize: 14, fontWeight: "700" },
 });

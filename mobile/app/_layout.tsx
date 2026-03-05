@@ -9,8 +9,8 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <QueryClientProvider client={queryClient}>
-        <StatusBar style="light" backgroundColor="#030A05" />
-        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: "#030A05" } }}>
+        <StatusBar style="light" backgroundColor="#0A0505" />
+        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: "#0A0505" } }}>
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="snake/[id]" options={{ presentation: "modal" }} />
           <Stack.Screen name="emergency" options={{ presentation: "fullScreenModal" }} />

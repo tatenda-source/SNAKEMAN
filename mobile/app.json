@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "SNAKEMAN",
+    "name": "chawaswildadventures",
     "slug": "snakeman-zw",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,21 +10,21 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#030A05"
+      "backgroundColor": "#0A0505"
     },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "zw.snakeman.app",
       "infoPlist": {
-        "NSCameraUsageDescription": "SNAKEMAN uses your camera to photograph snakes for AI identification.",
-        "NSPhotoLibraryUsageDescription": "SNAKEMAN accesses your photo library to upload snake photos for identification.",
-        "NSLocationWhenInUseUsageDescription": "SNAKEMAN uses your location to connect you with nearby experts during emergencies."
+        "NSCameraUsageDescription": "chawaswildadventures uses your camera to photograph snakes for AI identification.",
+        "NSPhotoLibraryUsageDescription": "chawaswildadventures accesses your photo library to upload snake photos for identification.",
+        "NSLocationWhenInUseUsageDescription": "chawaswildadventures uses your location to connect you with nearby experts during emergencies."
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#030A05"
+        "backgroundColor": "#0A0505"
       },
       "package": "zw.snakeman.app",
       "permissions": [
@@ -40,7 +40,7 @@
       "expo-image-picker",
       [
         "expo-location",
-        { "locationAlwaysAndWhenInUsePermission": "SNAKEMAN uses location for emergency response." }
+        { "locationAlwaysAndWhenInUsePermission": "chawaswildadventures uses location for emergency response." }
       ]
     ],
     "extra": {

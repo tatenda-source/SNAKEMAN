@@ -4,14 +4,14 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "Chawa's WildCatcher — Zimbabwe Snake ID & Expert Consultation",
+  title: "chawaswildadventures — Zimbabwe Snake ID & Expert Consultation",
   description:
     "Instant AI-powered snake identification for Zimbabwe's 8 most common species. Book expert consultations and access emergency support.",
-  keywords: ["Zimbabwe snakes", "snake identification", "herpetology", "snake bite", "wildlife", "Chawa's Wild Adventures"],
+  keywords: ["Zimbabwe snakes", "snake identification", "herpetology", "snake bite", "wildlife", "chawaswildadventures"],
   openGraph: {
-    title: "Chawa's WildCatcher",
+    title: "chawaswildadventures",
     description: "Know Your Snake. Save Your Life.",
-    siteName: "Chawa's WildCatcher",
+    siteName: "chawaswildadventures",
     type: "website",
   },
 };
@@ -30,9 +30,9 @@ export default function RootLayout({
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#0D1F10",
-              color: "#F0FDF4",
-              border: "1px solid rgba(34,197,94,0.2)",
+              background: "#1F1210",
+              color: "#FFF5F5",
+              border: "1px solid rgba(220,38,38,0.2)",
             },
           }}
         />

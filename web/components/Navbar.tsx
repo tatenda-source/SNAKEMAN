@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, AlertTriangle } from "lucide-react";
 
@@ -34,56 +35,19 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
 
-        {/* ── GRAFFITI LOGO ── */}
+        {/* ── LOGO ── */}
         <Link href="/" className="flex items-center gap-2 group flex-none">
-          {/* Tag-style snake icon — thick outer stroke (shadow), bright inner stroke */}
-          <div className="relative w-9 h-9 flex-none">
-            <svg viewBox="0 0 36 36" fill="none" className="w-9 h-9">
-              {/* Dark outer stroke for graffiti outline depth */}
-              <path
-                d="M18 3C10 3 3 10 3 18s7 15 15 15c3 0 5-2 6-5 1 3 3 5 6 5-2-4-2-9 0-13-4 2-8 2-10-2s0-9 4-11c-2 4 0 9 4 9s6-4 4-9c4 2 4 9 0 13"
-                stroke="#020c04"
-                strokeWidth="5"
-                strokeLinecap="round"
-              />
-              {/* Bright venom stroke on top */}
-              <path
-                d="M18 3C10 3 3 10 3 18s7 15 15 15c3 0 5-2 6-5 1 3 3 5 6 5-2-4-2-9 0-13-4 2-8 2-10-2s0-9 4-11c-2 4 0 9 4 9s6-4 4-9c4 2 4 9 0 13"
-                stroke="#22C55E"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                className="drop-shadow-[0_0_6px_rgba(34,197,94,0.8)]"
-              />
-              {/* Eye */}
-              <circle cx="11" cy="14" r="2.5" fill="#020c04" />
-              <circle cx="11" cy="14" r="1.5" fill="#22C55E" />
-              <circle cx="11.5" cy="13.5" r="0.5" fill="#F59E0B" />
-            </svg>
-          </div>
-
-          {/* Graffiti wordmark — italic, stroked, skewed */}
-          <div className="flex flex-col leading-none" style={{ transform: "skewX(-7deg)" }}>
-            <span
-              className="text-[8px] font-black uppercase tracking-[0.25em] text-smoke/60 select-none"
-              style={{ fontStyle: "italic" }}
-            >
-              Chawa's
-            </span>
-            <span
-              className="font-display font-black text-[19px] leading-none tracking-tight"
-              style={{
-                fontStyle: "italic",
-                WebkitTextStroke: "1.5px #020c04",
-                textShadow: "2px 3px 0 rgba(0,0,0,0.85), 0 0 22px rgba(34,197,94,0.35)",
-              }}
-            >
-              <span className="text-parchment">Wild</span>
-              <span className="text-venom">Catcher</span>
-            </span>
-          </div>
+          <Image
+            src="/logo.jpg"
+            alt="chawaswildadventures"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
-        {/* ── DESKTOP NAV (≥1024px) ── */}
+        {/* ── DESKTOP NAV ── */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <Link
@@ -109,7 +73,7 @@ export default function Navbar() {
             <span className="md:hidden">SOS</span>
           </Link>
 
-          {/* Hamburger — shows below lg */}
+          {/* Hamburger */}
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden w-9 h-9 flex items-center justify-center rounded-xl glass text-parchment/80 hover:text-venom transition-colors"
@@ -119,7 +83,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── MOBILE MENU (below lg) ── */}
+      {/* ── MOBILE MENU ── */}
       {open && (
         <div className="lg:hidden bg-forest-950/98 backdrop-blur-xl border-b border-venom/10">
           <div className="px-6 py-5 flex flex-col gap-1">

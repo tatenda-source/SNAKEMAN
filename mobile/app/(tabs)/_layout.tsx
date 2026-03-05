@@ -50,7 +50,7 @@ export default function TabLayout() {
           paddingBottom: 16,
           paddingTop: 10,
         },
-        tabBarActiveTintColor: "#22C55E",
+        tabBarActiveTintColor: "#DC2626",
         tabBarInactiveTintColor: "#4B5563",
         tabBarLabelStyle: { fontSize: 10, fontWeight: "600" },
       }}

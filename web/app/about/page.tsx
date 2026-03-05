@@ -26,7 +26,7 @@ const CREDENTIALS = [
     icon: Shield,
     title: "Certified Snake Handler",
     body: "Licensed by Zimbabwe Parks & Wildlife Management Authority for capture, relocation, and handling of all native venomous species.",
-    accent: "#22C55E",
+    accent: "#DC2626",
   },
   {
     icon: Award,
@@ -87,13 +87,14 @@ export default function AboutPage() {
                   <span className="text-parchment">Meet</span>
                   <br />
                   <span className="text-venom text-glow-green">Chawa.</span>
+
                 </h1>
                 <p className="text-mist/70 text-lg leading-relaxed mb-6">
                   Zimbabwe's most fearless wildlife handler. When everyone else runs, Chawa walks toward it —
                   camera in one hand, tongs in the other, grinning the whole time.
                 </p>
                 <p className="text-smoke text-base leading-relaxed mb-8">
-                  Founder of <span className="text-venom font-semibold">Chawa's Wild Adventures</span>, he has spent over a decade in the field
+                  Founder of <span className="text-venom font-semibold">chawaswildadventures</span>, he has spent over a decade in the field
                   catching, relocating, and educating Zimbabweans about the country's most misunderstood
                   creatures. His philosophy is simple: every snake has a right to live, every human has a right
                   to feel safe, and there is no reason those two things can't coexist.
@@ -124,7 +125,7 @@ export default function AboutPage() {
                   <div
                     className="absolute inset-0 opacity-10 pointer-events-none"
                     style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='20' rx='18' ry='13' fill='none' stroke='%2322C55E' stroke-width='0.5'/%3E%3C/svg%3E")`,
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cellipse cx='20' cy='20' rx='18' ry='13' fill='none' stroke='%23DC2626' stroke-width='0.5'/%3E%3C/svg%3E")`,
                       backgroundSize: "40px 40px",
                     }}
                   />

@@ -9,7 +9,7 @@ const SNAKES = [
   { id: "puff-adder", name: "Puff Adder", danger: "CRITICAL", accent: "#F59E0B" },
   { id: "mozambique-spitting-cobra", name: "Spitting Cobra", danger: "CRITICAL", accent: "#F59E0B" },
   { id: "boomslang", name: "Boomslang", danger: "HIGH", accent: "#84CC16" },
-  { id: "green-mamba", name: "Green Mamba", danger: "HIGH", accent: "#4ADE80" },
+  { id: "green-mamba", name: "Green Mamba", danger: "HIGH", accent: "#F87171" },
   { id: "egyptian-cobra", name: "Egyptian Cobra", danger: "HIGH", accent: "#FB923C" },
   { id: "african-rock-python", name: "Rock Python", danger: "MEDIUM", accent: "#A78BFA" },
   { id: "rinkhals", name: "Rinkhals", danger: "HIGH", accent: "#F87171" },
@@ -19,7 +19,7 @@ const DANGER_COLORS: Record<string, string> = {
   CRITICAL: "#EF4444",
   HIGH: "#F59E0B",
   MEDIUM: "#A78BFA",
-  LOW: "#22C55E",
+  LOW: "#DC2626",
 };
 
 const SAMPLE_ARTICLES = [
@@ -32,7 +32,7 @@ const SAMPLE_ARTICLES = [
 ];
 
 const TYPE_ICONS: Record<string, React.ElementType> = { article: BookOpen, video: Video, photo: Image, tip: Lightbulb };
-const TYPE_COLORS: Record<string, string> = { article: "#22C55E", video: "#A78BFA", photo: "#F59E0B", tip: "#FB923C" };
+const TYPE_COLORS: Record<string, string> = { article: "#DC2626", video: "#A78BFA", photo: "#F59E0B", tip: "#FB923C" };
 
 const CATEGORIES = ["All", "First Aid", "Identification", "Safety", "Emergency", "Education"];
 
@@ -163,7 +163,7 @@ export default function LibraryPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((a) => {
               const Icon = TYPE_ICONS[a.type] || BookOpen;
-              const iconColor = TYPE_COLORS[a.type] || "#22C55E";
+              const iconColor = TYPE_COLORS[a.type] || "#DC2626";
               return (
                 <div key={a.id} className="glass rounded-2xl p-5 group hover:border-white/10 transition-all cursor-pointer hover:-translate-y-0.5">
                   <div className="flex items-center justify-between mb-4">

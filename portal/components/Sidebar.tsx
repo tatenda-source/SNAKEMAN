@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -30,27 +31,15 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="p-6 border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-              <path
-                d="M12 2C7 2 2 7 2 12s5 10 10 10c2 0 4-2 5-4 1 2 2 4 4 4-1.5-3-1.5-6 0-9-3 1.5-6 1.5-7.5-1.5S13 5 16 3c-1.5 3 0 6 3 6s4.5-3 3-6"
-                stroke="#22C55E"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </div>
-          <div>
-            <div className="leading-none">
-              <div className="text-[8px] font-bold tracking-[0.2em] uppercase text-text-muted mb-0.5">Chawa's</div>
-              <div className="font-bold text-sm leading-none">
-                Wild<span className="text-accent">Catcher</span>
-              </div>
-            </div>
-            <div className="text-text-muted text-[10px] tracking-wide uppercase mt-0.5">Expert Portal</div>
-          </div>
+          <Image
+            src="/logo.jpg"
+            alt="chawaswildadventures"
+            width={140}
+            height={42}
+            className="h-9 w-auto object-contain"
+          />
         </div>
+        <div className="text-text-muted text-[10px] tracking-wide uppercase mt-2">Expert Portal</div>
       </div>
 
       {/* Expert info */}
